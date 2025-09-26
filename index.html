@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BUBBLES - The Comic Book Pup Adventure! 🐶</title>
+    <meta name="description" content="Join Bubbles on the most epic cartoon adventure to the moon! The most advanced memecoin with comic book style graphics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Bangers&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Comic Book Color Palette */
+            --comic-blue: #4A90E2;
+            --comic-pink: #FF6B9D;
+            --comic-yellow: #FFD93D;
+            --comic-green: #6BCF7F;
+            --comic-purple: #9B59B6;
+            --comic-orange: #FF8C42;
+            --comic-red: #FF5757;
+            --comic-cyan: #00D2FF;
+            
+            /* Advanced Gradients */
+            --gradient-hero: linear-gradient(135deg, #FFE5F1 0%, #E5F3FF 50%, #F0FFE5 100%);
+            --gradient-stats: linear-gradient(135deg, #E5F3FF 0%, #FFE5F1 50%, #F5E5FF 100%);
+            --gradient-about: linear-gradient(135deg, #FFFAE5 0%, #FFE5F1 50%, #E5FFFA 100%);
+            --gradient-contract: linear-gradient(135deg, #F0FFE5 0%, #E5F3FF 50%, #FFE5F1 100%);
+            --gradient-buy: linear-gradient(135deg, #F5E5FF 0%, #FFFAE5 50%, #E5F3FF 100%);
+            --gradient-tokenomics: linear-gradient(135deg, #FFE5F1 0%, #F0FFE5 50%, #E5F3FF 100%);
+            
+            /* Text Colors */
+            --text-dark: #2C3E50;
+            --text-medium: #34495E;
+            --text-light: #7F8C8D;
+            --text-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', cursive;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Advanced Comic Book Border */
+        .comic-border {
+            border: 4px solid var(--text-dark);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 
+                0 0 0 6px var(--comic-yellow),
+                0 0 0 10px var(--text-dark),
+                0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .comic-border::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, var(--comic-pink), var(--comic-blue), var(--comic-green), var(--comic-orange));
+            border-radius: 25px;
+            z-index: -1;
+            animation: borderShine 3s ease-in-out infinite;
+        }
+
+        @keyframes borderShine {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        /* Advanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 4px solid var(--comic-pink);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 8px 32px rgba(255, 107, 157, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            color: var(--comic-pink);
+            text-shadow: 
+                3px 3px 0px var(--text-dark),
+                6px 6px 10px rgba(0,0,0,0.3);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo:hover {
+            transform: rotate(2deg) scale(1.1);
+            text-shadow: 
+                4px 4px 0px var(--text-dark),
+                8px 8px 15px rgba(0,0,0,0.4);
+        }
+
+        .logo::before {
+            content: '🫧';
+            font-size: 3rem;
+            animation: logoSpin 4s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        @keyframes logoSpin {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1.2); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--comic-blue), var(--comic-cyan));
+            border: 3px solid var(--text-dark);
+            border-radius: 15px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-family: 'Bangers', cursive;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 
+                0 4px 0px var(--text-dark),
+                0 8px 15px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px) rotate(1deg);
+            box-shadow: 
+                0 6px 0px var(--text-dark),
+                0 12px 25px rgba(0,0,0,0.3);
+        }
+
+        .nav-btn:active {
+            transform: translateY(2px);
+            box-shadow: 
+                0 2px 0px var(--text-dark),
+                0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Custom SVG Icons with Animation */
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            animation: iconBob 2s ease-in-out infinite;
+        }
+
+        @keyframes iconBob {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-2px); }
+        }
+
+        /* Hero Section - Advanced Layout */
+        .hero {
+            background: var(--gradient-hero);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Comic Book Dots Pattern */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--comic-pink) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--comic-blue) 2px, transparent 2px);
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px;
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(80px, 80px); }
+        }
+
+        /* Floating Comic Elements */
+        .comic-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .speech-bubble, .pow-effect, .star-burst {
+            position: absolute;
+            animation: comicFloat 6s ease-in-out infinite;
+        }
+
+        .speech-bubble {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .pow-effect {
+            top: 25%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .star-burst {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes comicFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+                opacity: 0.7; 
+            }
+            33% { 
+                transform: translateY(-15px) rotate(2deg) scale(1.1); 
+                opacity: 1; 
+            }
+            66% { 
+                transform: translateY(-5px) rotate(-1deg) scale(0.95); 
+                opacity: 0.8; 
+            }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-content {
+            transform: rotate(-1deg);
+        }
+
+        .hero-content h1 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(3rem, 8vw, 7rem);
+            color: var(--comic-pink);
+            margin-bottom: 1rem;
+            text-shadow: 
+                4px 4px 0px var(--text-dark),
+                8px 8px 15px rgba(0,0,0,0.3);
+            line-height: 0.9;
+            transform: rotate(1deg);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { 
+                text-shadow: 
+                    4px 4px 0px var(--text-dark),
+                    8px 8px 15px rgba(0,0,0,0.3); 
+            }
+            to { 
+                text-shadow: 
+                    4px 4px 0px var(--text-dark),
+                    8px 8px 20px rgba(255, 107, 157, 0.6),
+                    12px 12px 25px rgba(0,0,0,0.4); 
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2rem;
+            color: var(--comic-blue);
+            margin-bottom: 1.5rem;
+            transform: rotate(0.5deg);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            background: rgba(255,255,255,0.7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 3px solid var(--text-dark);
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+            transform: rotate(-0.5deg);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-comic-primary {
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(135deg, var(--comic-yellow) 0%, var(--comic-orange) 100%);
+            border: 4px solid var(--text-dark);
+            border-radius: 20px;
+            color: var(--text-dark);
+            font-family: 'Bangers', cursive;
+            font-size: 1.4rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            box-shadow: 
+                0 6px 0px var(--text-dark),
+                0 12px 25px rgba(0,0,0,0.3);
+            transform: rotate(-2deg);
+        }
+
+        .btn-comic-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-comic-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-comic-primary:hover {
+            transform: translateY(-4px) rotate(0deg) scale(1.05);
+            box-shadow: 
+                0 10px 0px var(--text-dark),
+                0 18px 35px rgba(0,0,0,0.4);
+        }
+
+        .btn-comic-primary:active {
+            transform: translateY(2px) rotate(-1deg);
+            box-shadow: 
+                0 4px 0px var(--text-dark),
+                0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-comic-secondary {
+            padding: 1.2rem 2.5rem;
+            background: transparent;
+            border: 4px solid var(--comic-purple);
+            border-radius: 20px;
+            color: var(--comic-purple);
+            font-family: 'Bangers', cursive;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transform: rotate(1deg);
+            box-shadow: 
+                4px 4px 0px var(--comic-purple),
+                0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-comic-secondary:hover {
+            background: var(--comic-purple);
+            color: var(--text-white);
+            transform: translateY(-3px) rotate(0deg);
+            box-shadow: 
+                6px 6px 0px var(--text-dark),
+                0 12px 25px rgba(155, 89, 182, 0.4);
+        }
+
+        /* Advanced Character Illustration */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .main-character {
+            width: 500px;
+            height: 500px;
+            animation: characterBounce 4s ease-in-out infinite;
+            filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.3));
+            transform: rotate(2deg);
+        }
+
+        @keyframes characterBounce {
+            0%, 100% { 
+                transform: translateY(0px) rotate(2deg) scale(1); 
+            }
+            25% { 
+                transform: translateY(-20px) rotate(1deg) scale(1.02); 
+            }
+            50% { 
+                transform: translateY(-10px) rotate(3deg) scale(1.05); 
+            }
+            75% { 
+                transform: translateY(-15px) rotate(0deg) scale(1.02); 
+            }
+        }
+
+        /* Advanced Stats Section */
+        .stats-section {
+            background: var(--gradient-stats);
+            padding: 6rem 2rem;
+            position: relative;
+            transform: rotate(-0.5deg);
+            margin: -2rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            transform: rotate(0.5deg);
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.9);
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:nth-child(1) {
+            transform: rotate(-2deg);
+        }
+        .stat-card:nth-child(2) {
+            transform: rotate(1deg);
+        }
+        .stat-card:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+        .stat-card:nth-child(4) {
+            transform: rotate(2deg);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) rotate(0deg) scale(1.05);
+        }
+
+        .stat-number {
+            font-family: 'Bangers', cursive;
+            font-size: 3.5rem;
+            color: var(--comic-green);
+            text-shadow: 3px 3px 0px var(--text-dark);
+            margin-bottom: 0.5rem;
+            animation: statPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stat-label {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section - Comic Book Style */
+        .about-section {
+            background: var(--gradient-about);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-content {
+            transform: rotate(1deg);
+        }
+
+        .about-title {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: var(--comic-green);
+            margin-bottom: 2rem;
+            text-shadow: 4px 4px 0px var(--text-dark);
+            line-height: 0.9;
+            transform: rotate(-1deg);
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid var(--text-dark);
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+            transform: rotate(-0.5deg);
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(-1deg);
+        }
+
+        /* Contract Section - Advanced Design */
+        .contract-section {
+            background: var(--gradient-contract);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            transform: rotate(0.5deg);
+            margin: -2rem 0;
+        }
+
+        .contract-container {
+            max-width: 900px;
+            margin: 0 auto;
+            transform: rotate(-0.5deg);
+        }
+
+        .contract-title {
+            font-family: 'Bangers', cursive;
+            font-size: 3.5rem;
+            color: var(--comic-orange);
+            margin-bottom: 3rem;
+            text-shadow: 4px 4px 0px var(--text-dark);
+            transform: rotate(-1deg);
+        }
+
+        .contract-card {
+            background: rgba(255,255,255,0.9);
+            padding: 3rem;
+            border-radius: 25px;
+            position: relative;
+            transform: rotate(1deg);
+            transition: all 0.3s ease;
+        }
+
+        .contract-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .contract-address {
+            background: linear-gradient(135deg, rgba(107, 207, 127, 0.2), rgba(74, 144, 226, 0.2));
+            border: 3px solid var(--text-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, var(--comic-green), var(--comic-cyan));
+            border: 4px solid var(--text-dark);
+            border-radius: 20px;
+            padding: 1rem 2.5rem;
+            color: var(--text-white);
+            font-family: 'Bangers', cursive;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 
+                0 6px 0px var(--text-dark),
+                0 12px 25px rgba(0,0,0,0.3);
+            transform: rotate(-1deg);
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-4px) rotate(0deg) scale(1.05);
+            box-shadow: 
+                0 10px 0px var(--text-dark),
+                0 18px 35px rgba(0,0,0,0.4);
+        }
+
+        .copy-btn:active {
+            transform: translateY(2px) rotate(-0.5deg);
+            box-shadow: 
+                0 4px 0px var(--text-dark),
+                0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* How to Buy - Comic Style */
+        .how-to-buy {
+            background: var(--gradient-buy);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: 'Bangers', cursive;
+            font-size: 4.5rem;
+            text-align: center;
+            color: var(--comic-purple);
+            margin-bottom: 4rem;
+            text-shadow: 4px 4px 0px var(--text-dark);
+            transform: rotate(-1deg);
+        }
+
+        .steps-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .step-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+        .step-card:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .step-card:hover {
+            transform: translateY(-15px) rotate(0deg) scale(1.05);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--comic-pink), var(--comic-purple));
+            border: 4px solid var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            color: var(--text-white);
+            margin: 0 auto 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            box-shadow: 
+                0 6px 0px var(--text-dark),
+                0 12px 25px rgba(0,0,0,0.3);
+            animation: stepBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes stepBounce {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
+        }
+
+        .step-card h3 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--comic-purple);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .step-card p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .step-card a {
+            color: var(--comic-blue);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--comic-blue);
+            transition: all 0.3s ease;
+        }
+
+        .step-card a:hover {
+            color: var(--comic-pink);
+            border-bottom-color: var(--comic-pink);
+            transform: translateY(-2px);
+        }
+
+        /* Tokenomics - Advanced Style */
+        .tokenomics {
+            background: var(--gradient-tokenomics);
+            padding: 8rem 2rem;
+            position: relative;
+            transform: rotate(-0.3deg);
+        }
+
+        .tokenomics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            transform: rotate(0.3deg);
+        }
+
+        .token-card {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .token-card:nth-child(1) {
+            transform: rotate(-1deg);
+        }
+        .token-card:nth-child(2) {
+            transform: rotate(2deg);
+        }
+        .token-card:nth-child(3) {
+            transform: rotate(-1.5deg);
+        }
+
+        .token-card:hover {
+            transform: translateY(-15px) rotate(0deg) scale(1.05);
+        }
+
+        .token-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1.5rem;
+            animation: emojiSpin 4s ease-in-out infinite;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+        }
+
+        @keyframes emojiSpin {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(10deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1.2); }
+            75% { transform: rotate(-10deg) scale(1.1); }
+        }
+
+        .token-percentage {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: var(--comic-orange);
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0px var(--text-dark);
+            animation: percentagePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes percentagePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .token-card h3 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .token-card p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Footer - Comic Style */
+        .footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1A252F 100%);
+            color: var(--text-white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--comic-pink);
+            text-decoration: none;
+            font-family: 'Bangers', cursive;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            transform: rotate(-1deg);
+        }
+
+        .footer-link:hover {
+            color: var(--comic-yellow);
+            transform: translateY(-3px) rotate(1deg) scale(1.1);
+            text-shadow: 3px 3px 6px rgba(255, 221, 61, 0.5);
+        }
+
+        .footer-text {
+            font-family: 'Comic Neue', cursive;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            transform: rotate(0.5deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-container,
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .main-character {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                gap: 0.5rem;
+            }
+            
+            .nav-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .stats-section,
+            .contract-section,
+            .tokenomics {
+                transform: rotate(0deg);
+            }
+            
+            .stat-card,
+            .step-card,
+            .token-card {
+                transform: rotate(0deg) !important;
+            }
+        }
+
+        /* Advanced Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px) rotate(2deg);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px) rotate(-3deg);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0) rotate(0deg);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px) rotate(3deg);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0) rotate(0deg);
+        }
+
+        /* Advanced Particle Effects */
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+                opacity: 0.7; 
+            }
+            25% { 
+                transform: translateY(-20px) translateX(10px) rotate(90deg); 
+                opacity: 1; 
+            }
+            50% { 
+                transform: translateY(-10px) translateX(-10px) rotate(180deg); 
+                opacity: 0.8; 
+            }
+            75% { 
+                transform: translateY(-30px) translateX(5px) rotate(270deg); 
+                opacity: 0.9; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Container -->
+    <div class="particle-container" id="particles"></div>
+
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">$BUBBLES</div>
+            <div class="nav-links">
+                <a href="#" class="nav-btn" id="telegram-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.44 3.61-.51.36-.98.53-1.4.52-.46-.01-1.35-.26-2.01-.47-.81-.26-1.46-.4-1.4-.85.03-.23.37-.47.99-.72 3.88-1.69 6.48-2.81 7.82-3.35 3.73-1.55 4.5-1.82 5.01-1.83.11 0 .36.03.52.17.13.11.17.26.19.37.02.1.04.34.02.52z"/>
+                    </svg>
+                    TG
+                </a>
+                <a href="#" class="nav-btn" id="twitter-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                    </svg>
+                    X
+                </a>
+                <a href="#" class="nav-btn" id="chart-btn">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 9l1.5-1.5L12 9l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Chart
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Comic Elements -->
+            <div class="comic-elements">
+                <svg class="speech-bubble" width="120" height="80" viewBox="0 0 120 80">
+                    <path d="M10 10 L100 10 Q110 10 110 20 L110 50 Q110 60 100 60 L30 60 L20 70 L25 60 L20 60 Q10 60 10 50 L10 20 Q10 10 20 10 Z" fill="#FFD93D" stroke="#2C3E50" stroke-width="3"/>
+                    <text x="60" y="35" text-anchor="middle" font-family="Bangers" font-size="14" fill="#2C3E50">WOW!</text>
+                </svg>
+                
+                <svg class="pow-effect" width="100" height="100" viewBox="0 0 100 100">
+                    <polygon points="50,5 61,35 95,35 68,57 79,91 50,70 21,91 32,57 5,35 39,35" fill="#FF6B9D" stroke="#2C3E50" stroke-width="3"/>
+                    <text x="50" y="55" text-anchor="middle" font-family="Bangers" font-size="16" fill="white">POW!</text>
+                </svg>
+                
+                <svg class="star-burst" width="80" height="80" viewBox="0 0 80 80">
+                    <path d="M40 5 L45 30 L70 35 L45 40 L40 65 L35 40 L10 35 L35 30 Z" fill="#4A90E2" stroke="#2C3E50" stroke-width="3"/>
+                </svg>
+            </div>
+
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>BUBBLES</h1>
+                    <div class="hero-subtitle">(The Comic Hero Pup!)</div>
+                    <div class="hero-description">
+                        🎨 <strong>Meet Bubbles</strong> - the most epic cartoon superhero pup who's ready to take the crypto world by storm! With his magical powers and infectious energy, he's here to bring joy, laughter, and moon-bound adventures to the Solana blockchain!
+                        <br><br>
+                        <em>🚀 Get ready for the most legendary memecoin journey ever!</em>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-comic-primary" id="buy-btn">🚀 BUY NOW!</a>
+                        <a href="#about" class="btn-comic-secondary">📖 Read More</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <svg class="main-character" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main Character - Advanced Comic Style -->
+                        
+                        <!-- Body Shadow -->
+                        <ellipse cx="205" cy="285" rx="85" ry="65" fill="#000000" opacity="0.2"/>
+                        
+                        <!-- Dog Body -->
+                        <ellipse cx="200" cy="280" rx="85" ry="65" fill="url(#bodyGradient)"/>
+                        
+                        <!-- Body Highlights -->
+                        <ellipse cx="180" cy="260" rx="30" ry="20" fill="rgba(255,255,255,0.4)"/>
+                        
+                        <!-- Head Shadow -->
+                        <circle cx="205" cy="185" r="77" fill="#000000" opacity="0.2"/>
+                        
+                        <!-- Dog Head -->
+                        <circle cx="200" cy="180" r="77" fill="url(#headGradient)"/>
+                        
+                        <!-- Head Highlight -->
+                        <circle cx="175" cy="155" r="25" fill="rgba(255,255,255,0.5)"/>
+                        
+                        <!-- Superhero Mask -->
+                        <path d="M130 160 Q140 140 160 145 L200 150 L240 145 Q260 140 270 160 Q265 180 240 175 L200 170 L160 175 Q135 180 130 160 Z" fill="#4A90E2" opacity="0.8"/>
+                        <path d="M130 160 Q140 140 160 145 L200 150 L240 145 Q260 140 270 160 Q265 180 240 175 L200 170 L160 175 Q135 180 130 160 Z" stroke="#2C3E50" stroke-width="3" fill="none"/>
+                        
+                        <!-- Ears -->
+                        <ellipse cx="145" cy="125" rx="22" ry="35" fill="url(#earGradient)" transform="rotate(-25 145 125)"/>
+                        <ellipse cx="255" cy="125" rx="22" ry="35" fill="url(#earGradient)" transform="rotate(25 255 125)"/>
+                        
+                        <!-- Ear Inner -->
+                        <ellipse cx="150" cy="130" rx="12" ry="20" fill="#FF6B9D" transform="rotate(-25 150 130)"/>
+                        <ellipse cx="250" cy="130" rx="12" ry="20" fill="#FF6B9D" transform="rotate(25 250 130)"/>
+                        
+                        <!-- Eyes (Superhero style) -->
+                        <circle cx="175" cy="165" r="15" fill="white"/>
+                        <circle cx="225" cy="165" r="15" fill="white"/>
+                        <circle cx="175" cy="165" r="10" fill="#2C3E50"/>
+                        <circle cx="225" cy="165" r="10" fill="#2C3E50"/>
+                        
+                        <!-- Eye Shine -->
+                        <circle cx="178" cy="162" r="4" fill="white"/>
+                        <circle cx="228" cy="162" r="4" fill="white"/>
+                        
+                        <!-- Nose -->
+                        <ellipse cx="200" cy="190" rx="8" ry="6" fill="#2C3E50"/>
+                        <ellipse cx="202" cy="188" rx="3" ry="2" fill="white" opacity="0.8"/>
+                        
+                        <!-- Happy Mouth -->
+                        <path d="M170 210 Q200 240 230 210" stroke="#2C3E50" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        
+                        <!-- Tongue -->
+                        <ellipse cx="200" cy="225" rx="18" ry="10" fill="#FF5757"/>
+                        <ellipse cx="195" cy="222" rx="8" ry="4" fill="#FF8C8C"/>
+                        
+                        <!-- Superhero Cape -->
+                        <path d="M280 200 Q320 180 340 220 Q350 280 320 320 Q300 350 280 330 L280 200 Z" fill="url(#capeGradient)"/>
+                        <path d="M280 200 Q320 180 340 220 Q350 280 320 320 Q300 350 280 330" stroke="#2C3E50" stroke-width="3" fill="none"/>
+                        
+                        <!-- Cape Symbol -->
+                        <circle cx="310" cy="250" r="15" fill="#FFD93D"/>
+                        <text x="310" y="257" text-anchor="middle" font-family="Bangers" font-size="16" fill="#2C3E50">B</text>
+                        
+                        <!-- Superhero Belt -->
+                        <ellipse cx="200" cy="250" rx="70" ry="8" fill="#FFD93D"/>
+                        <ellipse cx="200" cy="250" rx="70" ry="8" stroke="#2C3E50" stroke-width="2" fill="none"/>
+                        <circle cx="200" cy="250" r="12" fill="#FF6B9D"/>
+                        <circle cx="200" cy="250" r="8" fill="#FFD93D"/>
+                        
+                        <!-- Paws -->
+                        <ellipse cx="160" cy="335" rx="20" ry="15" fill="url(#pawGradient)"/>
+                        <ellipse cx="200" cy="345" rx="20" ry="15" fill="url(#pawGradient)"/>
+                        <ellipse cx="240" cy="335" rx="20" ry="15" fill="url(#pawGradient)"/>
+                        
+                        <!-- Paw Details -->
+                        <ellipse cx="160" cy="330" rx="8" ry="6" fill="#FF6B9D"/>
+                        <ellipse cx="200" cy="340" rx="8" ry="6" fill="#FF6B9D"/>
+                        <ellipse cx="240" cy="330" rx="8" ry="6" fill="#FF6B9D"/>
+                        
+                        <!-- Superhero Tail -->
+                        <path d="M285 280 Q320 260 350 240 Q380 220 370 190 Q360 200 350 210 Q320 240 290 270" stroke="url(#tailGradient)" stroke-width="18" fill="none" stroke-linecap="round"/>
+                        
+                        <!-- Power Effects Around Character -->
+                        <g opacity="0.7">
+                            <!-- Lightning Bolts -->
+                            <path d="M100 120 L110 140 L105 140 L115 160 L105 150 L110 150 L100 130 Z" fill="#FFD93D"/>
+                            <path d="M320 100 L330 120 L325 120 L335 140 L325 130 L330 130 L320 110 Z" fill="#4A90E2"/>
+                            
+                            <!-- Energy Circles -->
+                            <circle cx="80" cy="200" r="12" fill="none" stroke="#FF6B9D" stroke-width="3"/>
+                            <circle cx="80" cy="200" r="8" fill="none" stroke="#FF6B9D" stroke-width="2"/>
+                            <circle cx="350" cy="180" r="15" fill="none" stroke="#6BCF7F" stroke-width="3"/>
+                            <circle cx="350" cy="180" r="10" fill="none" stroke="#6BCF7F" stroke-width="2"/>
+                            
+                            <!-- Stars -->
+                            <path d="M90 300 L92 308 L100 308 L94 313 L96 321 L90 316 L84 321 L86 313 L80 308 L88 308 Z" fill="#FFD93D"/>
+                            <path d="M340 320 L342 328 L350 328 L344 333 L346 341 L340 336 L334 341 L336 333 L330 328 L338 328 Z" fill="#4A90E2"/>
+                        </g>
+                        
+                        <!-- Gradients -->
+                        <defs>
+                            <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFD93D;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#FF8C42;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FF6B9D;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="headGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFFFCC;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFD93D;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="earGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF8C42;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FF6B9D;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="capeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF5757;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="pawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FFB366;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FF8C42;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="tailGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section fade-in">
+            <div class="stats-container">
+                <div class="stat-card comic-border">
+                    <div class="stat-number">1B</div>
+                    <div class="stat-label">Supply</div>
+                </div>
+                <div class="stat-card comic-border">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Tax</div>
+                </div>
+                <div class="stat-card comic-border">
+                    <div class="stat-number">LP</div>
+                    <div class="stat-label">Burnt</div>
+                </div>
+                <div class="stat-card comic-border">
+                    <div class="stat-number">SOL</div>
+                    <div class="stat-label">Network</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section slide-in-left">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2 class="about-title">THE LEGEND OF BUBBLES!</h2>
+                    <div class="about-text">
+                        🦸‍♂️ <strong>Origin Story:</strong> Bubbles wasn't just any ordinary pup - he was born with magical powers that could make anyone smile! With his rainbow-colored cape and infectious energy, he became the superhero the crypto world never knew it needed.
+                    </div>
+                    <div class="about-text">
+                        ⚡ <strong>His Mission:</strong> To bring joy, laughter, and positive vibes to the sometimes chaotic world of cryptocurrency. Armed with his super-powered enthusiasm and community spirit, Bubbles is here to unite all memecoin lovers!
+                    </div>
+                    <div class="about-text">
+                        🌟 <strong>The Adventure Continues:</strong> Now living forever on the Solana blockchain, Bubbles invites you to join his epic quest to the moon and beyond!
+                    </div>
+                    <a href="#" class="btn-comic-primary" id="join-btn">JOIN THE ADVENTURE!</a>
+                </div>
+                
+                <div class="about-image slide-in-right">
+                    <!-- Smaller character illustration for about section -->
+                    <svg width="350" height="350" viewBox="0 0 300 300" fill="none">
+                        <circle cx="150" cy="120" r="50" fill="url(#smallHeadGrad)"/>
+                        <ellipse cx="125" cy="90" rx="15" ry="25" fill="#FF8C42" transform="rotate(-20 125 90)"/>
+                        <ellipse cx="175" cy="90" rx="15" ry="25" fill="#FF8C42" transform="rotate(20 175 90)"/>
+                        <circle cx="135" cy="110" r="8" fill="#2C3E50"/>
+                        <circle cx="165" cy="110" r="8" fill="#2C3E50"/>
+                        <circle cx="138" cy="107" r="3" fill="white"/>
+                        <circle cx="168" cy="107" r="3" fill="white"/>
+                        <path d="M130 135 Q150 155 170 135" stroke="#2C3E50" stroke-width="3" fill="none"/>
+                        <ellipse cx="150" cy="200" rx="60" ry="50" fill="url(#smallBodyGrad)"/>
+                        <ellipse cx="110" cy="240" rx="15" ry="10" fill="#FF8C42"/>
+                        <ellipse cx="150" cy="250" rx="15" ry="10" fill="#FF8C42"/>
+                        <ellipse cx="190" cy="240" rx="15" ry="10" fill="#FF8C42"/>
+                        <!-- Mini cape -->
+                        <path d="M200 150 Q220 140 230 160 Q235 190 220 210 Q210 220 200 210 Z" fill="url(#miniCapeGrad)"/>
+                        
+                        <defs>
+                            <linearGradient id="smallHeadGrad">
+                                <stop offset="0%" style="stop-color:#FFFFCC"/>
+                                <stop offset="100%" style="stop-color:#FFD93D"/>
+                            </linearGradient>
+                            <linearGradient id="smallBodyGrad">
+                                <stop offset="0%" style="stop-color:#FFD93D"/>
+                                <stop offset="100%" style="stop-color:#FF6B9D"/>
+                            </linearGradient>
+                            <linearGradient id="miniCapeGrad">
+                                <stop offset="0%" style="stop-color:#FF5757"/>
+                                <stop offset="100%" style="stop-color:#9B59B6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contract Section -->
+        <section class="contract-section fade-in">
+            <div class="contract-container">
+                <h2 class="contract-title">⚡ BUBBLES CONTRACT ⚡</h2>
+                <div class="contract-card comic-border">
+                    <div class="contract-address" id="contract-address">
+                        8xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgBuB
+                    </div>
+                    <button class="copy-btn" onclick="copyContract()">📋 COPY CONTRACT!</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Buy Section -->
+        <section class="how-to-buy fade-in">
+            <h2 class="section-title">🚀 HOW TO GET BUBBLES! 🚀</h2>
+            <div class="steps-container">
+                <div class="step-card comic-border">
+                    <div class="step-number">5</div>
+                    <h3>Welcome to the Pack!</h3>
+                    <p>CONGRATULATIONS! 🎉 You're now part of Bubbles' superhero squad! Get ready for the most exciting adventure in crypto history! WOOF WOOF! 🐶</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokenomics Section -->
+        <section class="tokenomics fade-in">
+            <h2 class="section-title">⚡ SUPER TOKENOMICS! ⚡</h2>
+            <div class="tokenomics-grid">
+                <div class="token-card comic-border">
+                    <div class="token-emoji">💎</div>
+                    <div class="token-percentage">85%</div>
+                    <h3>Liquidity Vault</h3>
+                    <p>Locked away in our super-secure vault! This ensures Bubbles' powers remain stable and the community stays protected on our epic journey!</p>
+                </div>
+                
+                <div class="token-card comic-border">
+                    <div class="token-emoji">📢</div>
+                    <div class="token-percentage">10%</div>
+                    <h3>Hero Marketing</h3>
+                    <p>Spreading the word about Bubbles' adventures! Marketing campaigns, partnerships, and growing our superhero community across the multiverse!</p>
+                </div>
+                
+                <div class="token-card comic-border">
+                    <div class="token-emoji">🛠️</div>
+                    <div class="token-percentage">5%</div>
+                    <h3>Power Development</h3>
+                    <p>Continuously upgrading Bubbles' abilities! Website improvements, new features, and making sure our hero stays at peak performance!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link" id="footer-telegram">📱 Telegram</a>
+                <a href="#" class="footer-link" id="footer-twitter">🐦 Twitter</a>
+                <a href="#" class="footer-link" id="footer-chart">📊 Chart</a>
+                <a href="#" class="footer-link">📄 Whitepaper</a>
+            </div>
+            <div class="footer-text">
+                © 2025 $BUBBLES - The Superhero Memecoin! All rights reserved. | Made with 🦸‍♂️ superhero magic and lots of treats!
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Advanced Particle System
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random colors from our palette
+            const colors = ['#4A90E2', '#FF6B9D', '#FFD93D', '#6BCF7F', '#9B59B6', '#FF8C42'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            const size = Math.random() * 8 + 4;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.backgroundColor = color;
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = Math.random() * window.innerHeight + 'px';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 6 + 6) + 's';
+            
+            document.getElementById('particles').appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            }, 12000);
+        }
+
+        // Create particles continuously
+        setInterval(createParticle, 2000);
+
+        // Copy contract functionality with comic effects
+        function copyContract() {
+            const contractAddress = document.getElementById('contract-address').textContent.trim();
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ COPIED! AWESOME!';
+                btn.style.background = 'linear-gradient(135deg, #6BCF7F, #4A90E2)';
+                btn.style.transform = 'translateY(-4px) rotate(0deg) scale(1.1)';
+                
+                // Create confetti effect
+                createSuperConfetti(btn.getBoundingClientRect());
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    btn.style.transform = '';
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Oops! Please copy the contract manually, superhero!');
+            });
+        }
+
+        // Super Confetti Effect
+        function createSuperConfetti(buttonRect) {
+            const colors = ['#4A90E2', '#FF6B9D', '#FFD93D', '#6BCF7F', '#9B59B6', '#FF8C42'];
+            const shapes = ['●', '★', '♦', '♠', '♥', '♣'];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                confetti.style.position = 'fixed';
+                confetti.style.left = (buttonRect.left + buttonRect.width / 2) + 'px';
+                confetti.style.top = (buttonRect.top + buttonRect.height / 2) + 'px';
+                confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.fontSize = Math.random() * 20 + 15 + 'px';
+                confetti.style.pointerEvents = 'none';
+                confetti.style.zIndex = '9999';
+                confetti.style.transition = 'all 2s ease-out';
+                confetti.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 300 + 100;
+                    confetti.style.transform = `
+                        translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) 
+                        rotate(${Math.random() * 720}deg) 
+                        scale(0)
+                    `;
+                    confetti.style.opacity = '0';
+                }, 50);
+                
+                setTimeout(() => {
+                    if (document.body.contains(confetti)) {
+                        document.body.removeChild(confetti);
+                    }
+                }, 2000);
+            }
+        }
+
+        // Advanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Add stagger effect to cards
+                    if (entry.target.querySelector('.stat-card, .step-card, .token-card')) {
+                        const cards = entry.target.querySelectorAll('.stat-card, .step-card, .token-card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(50px) rotate(5deg)';
+                                card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0) rotate(0deg)';
+                                }, 100);
+                            }, index * 200);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling with comic bounce
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Social media and buy button handlers
+        document.addEventListener('click', (e) => {
+            const button = e.target.closest('#telegram-btn, #footer-telegram, #twitter-btn, #footer-twitter, #chart-btn, #footer-chart, #buy-btn, #join-btn');
+            
+            if (button) {
+                // Create super effect on click
+                createSuperConfetti(button.getBoundingClientRect());
+                
+                if (button.id.includes('telegram')) {
+                    setTimeout(() => alert('🚀 Add your Telegram link here, superhero!'), 300);
+                    // Replace with: window.open('YOUR_TELEGRAM_LINK', '_blank');
+                } else if (button.id.includes('twitter')) {
+                    setTimeout(() => alert('🐦 Add your Twitter link here, hero!'), 300);
+                    // Replace with: window.open('YOUR_TWITTER_LINK', '_blank');
+                } else if (button.id.includes('chart')) {
+                    setTimeout(() => alert('📊 Add your Chart link here, champion!'), 300);
+                    // Replace with: window.open('YOUR_CHART_LINK', '_blank');
+                } else if (button.id.includes('buy') || button.id.includes('join')) {
+                    setTimeout(() => alert('💫 Add your Buy/DEX link here, legend!'), 300);
+                    // Replace with: window.open('YOUR_BUY_LINK', '_blank');
+                }
+            }
+        });
+
+        // Advanced hover effects for cards
+        document.querySelectorAll('.stat-card, .step-card, .token-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) rotate(0deg) scale(1.05)';
+                card.style.filter = 'brightness(1.1) saturate(1.2)';
+                
+                // Add mini particle burst
+                const rect = card.getBoundingClientRect();
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => createMiniParticle(rect), i * 100);
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.filter = '';
+            });
+        });
+
+        function createMiniParticle(rect) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.left = (rect.left + rect.width / 2) + 'px';
+            particle.style.top = (rect.top + rect.height / 2) + 'px';
+            particle.style.width = '6px';
+            particle.style.height = '6px';
+            particle.style.backgroundColor = '#FFD93D';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '999';
+            particle.style.transition = 'all 1s ease-out';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 50;
+                particle.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0)`;
+                particle.style.opacity = '0';
+            }, 50);
+            
+            setTimeout(() => {
+                if (document.body.contains(particle)) {
+                    document.body.removeChild(particle);
+                }
+            }, 1000);
+        }
+
+        // Character animation interactions
+        const mainCharacter = document.querySelector('.main-character');
+        if (mainCharacter) {
+            mainCharacter.addEventListener('click', () => {
+                mainCharacter.style.animation = 'none';
+                setTimeout(() => {
+                    mainCharacter.style.animation = 'characterBounce 2s ease-in-out';
+                }, 10);
+                
+                // Create power burst effect
+                const rect = mainCharacter.getBoundingClientRect();
+                createPowerBurst(rect);
+            });
+        }
+
+        function createPowerBurst(rect) {
+            const powerEffects = ['⚡', '💥', '✨', '🌟', '💫', '🔥'];
+            
+            for (let i = 0; i < 8; i++) {
+                const power = document.createElement('div');
+                power.textContent = powerEffects[Math.floor(Math.random() * powerEffects.length)];
+                power.style.position = 'fixed';
+                power.style.left = (rect.left + rect.width / 2) + 'px';
+                power.style.top = (rect.top + rect.height / 2) + 'px';
+                power.style.fontSize = '2rem';
+                power.style.pointerEvents = 'none';
+                power.style.zIndex = '999';
+                power.style.transition = 'all 2s ease-out';
+                
+                document.body.appendChild(power);
+                
+                setTimeout(() => {
+                    const angle = (Math.PI * 2 * i) / 8;
+                    const distance = 200;
+                    power.style.transform = `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) rotate(${Math.random() * 360}deg) scale(0)`;
+                    power.style.opacity = '0';
+                }, 100);
+                
+                setTimeout(() => {
+                    if (document.body.contains(power)) {
+                        document.body.removeChild(power);
+                    }
+                }, 2100);
+            }
+        }
+
+        // Parallax scrolling for enhanced depth
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.comic-elements svg, .main-character');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.01}deg)`;
+            });
+            
+            // Floating particle parallax
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                const speed = 0.05 + (index % 3) * 0.02;
+                particle.style.transform += ` translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Dynamic title animation
+        const heroTitle = document.querySelector('.hero-content h1');
+        if (heroTitle) {
+            let animationIndex = 0;
+            const animations = [
+                'titleGlow 3s ease-in-out infinite alternate',
+                'bounce 2s ease-in-out infinite',
+                'pulse 2s ease-in-out infinite'
+            ];
+            
+            setInterval(() => {
+                animationIndex = (animationIndex + 1) % animations.length;
+                heroTitle.style.animation = animations[animationIndex];
+            }, 6000);
+        }
+
+        // Initialize particle system
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createParticle, i * 500);
+        }
+
+        // Easter egg - Konami code for super mode
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.code);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
+                // Activate super mode!
+                document.body.style.animation = 'rainbow 2s ease-in-out infinite';
+                alert('🦸‍♂️ SUPER MODE ACTIVATED! Bubbles has unleashed maximum power!');
+                
+                // Create massive confetti explosion
+                for (let i = 0; i < 100; i++) {
+                    setTimeout(() => {
+                        createSuperConfetti({
+                            left: Math.random() * window.innerWidth,
+                            top: Math.random() * window.innerHeight,
+                            width: 0,
+                            height: 0
+                        });
+                    }, i * 50);
+                }
+                
+                konamiCode = [];
+            }
+        });
+
+        // Add rainbow animation for super mode
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg) saturate(1); }
+                25% { filter: hue-rotate(90deg) saturate(1.2); }
+                50% { filter: hue-rotate(180deg) saturate(1.4); }
+                75% { filter: hue-rotate(270deg) saturate(1.2); }
+                100% { filter: hue-rotate(360deg) saturate(1); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('🦸‍♂️ Welcome to Bubbles\' super-powered website! Try the Konami code for a surprise!');
+    </script>
+</body>
+</html>border">
+                    <div class="step-number">1</div>
+                    <h3>Get a Wallet!</h3>
+                    <p>Download <a href="https://phantom.app" target="_blank">Phantom</a> or any Solana wallet. It's like getting your superhero utility belt - you'll need it for the adventure!</p>
+                </div>
+                
+                <div class="step-card comic-border">
+                    <div class="step-number">2</div>
+                    <h3>Power Up with SOL!</h3>
+                    <p>Get some $SOL tokens from an exchange or directly in your wallet. This is your rocket fuel for the journey to the moon! 🌙</p>
+                </div>
+                
+                <div class="step-card comic-border">
+                    <div class="step-number">3</div>
+                    <h3>Find the Trading Post!</h3>
+                    <p>Head to Jupiter, Raydium, or any Solana DEX. Connect your wallet and prepare for the most epic swap of your life!</p>
+                </div>
+                
+                <div class="step-card comic-border">
+                    <div class="step-number">4</div>
+                    <h3>Swap for BUBBLES!</h3>
+                    <p>Use our contract address to swap your SOL for $BUBBLES. Zero taxes means more tokens for you! It's like getting superpowers! ⚡</p>
+                </div>
+                
+                <div class="step-card comic-
